@@ -15,34 +15,34 @@
 #include <unistd.h>
 #include "libft/libft.h"
 
-static void	handler(int signum, siginfo_t *info, void *context);
+//static void	handler(int signum, siginfo_t *info, void *context);
 
 int	main(void)
 {
-	int					pid;
-	struct sigaction	sa;
-	sigset_t			blockmask;
+	// int					pid;
+	// struct sigaction	sa;
+	// sigset_t			blockmask;
 
-	pid = getpid();
-	ft_putnbr_fd(pid, 1);
-	sigemptyset(&blockmask);
-	sigaddset(&blockmask, SIGINT);
-	sigaddset(&blockmask, SIGQUIT);
-	sa.sa_handler = 0;
-	sa.sa_sigaction = handler;
-	sa.sa_flags = SA_SIGINFO;
-	sa.sa_mask = blockmask;
-	if (sigaction(SIGUSR1, &sa, NULL) == -1)
-		printf("error\n");
-	if (sigaction(SIGUSR2, &sa, NULL) == -1)
-		printf("error\n");
-	while (1)
-		pause();
-	return (0);
+	// pid = getpid();
+	// ft_putnbr_fd(pid, 1);
+	// sigemptyset(&blockmask);
+	// sigaddset(&blockmask, SIGINT);
+	// sigaddset(&blockmask, SIGQUIT);
+	// sa.sa_handler = 0;
+	// sa.sa_sigaction = handler;
+	// sa.sa_flags = SA_SIGINFO;
+	// sa.sa_mask = blockmask;
+	// if (sigaction(SIGUSR1, &sa, NULL) == -1)
+	// 	printf("error\n");
+	// if (sigaction(SIGUSR2, &sa, NULL) == -1)
+	// 	printf("error\n");
+	// while (1)
+	// 	pause();
+	// return (0);
 }
 
-static void	handler(int signum, siginfo_t *info, void *context)
-{
-	context ++;
-	printf("funciono %d, %d\n", signum);
-}
+//static void	handler(int signum, siginfo_t *info, void *context)
+//{
+//	context ++;
+//	printf("funciono %d, %d\n", signum);
+//}
